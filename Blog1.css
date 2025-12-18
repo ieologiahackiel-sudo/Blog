@@ -1,0 +1,39 @@
+// HORA Y FECHA
+function updateTime() {
+  const now = new Date();
+  const options = { dateStyle: "full", timeStyle: "medium" };
+  document.getElementById("time").textContent =
+    "🕒 " + now.toLocaleString("es-ES", options);
+}
+
+setInterval(updateTime, 1000);
+updateTime();
+
+// RADIO
+function toggleRadio() {
+  const radio = document.getElementById("radioPlayer");
+  if (radio.paused) {
+    radio.play();
+  } else {
+    radio.pause();
+  }
+}
+
+// UBICACIÓN
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    position => {
+      const lat = position.coords.latitude.toFixed(2);
+      const lon = position.coords.longitude.toFixed(2);
+      document.getElementById("location").textContent =
+        `📍 Ubicación: ${lat}, ${lon}`;
+    },
+    () => {
+      document.getElementById("location").textContent =
+        "📍 Ubicación no permitida";
+    }
+  );
+} else {
+  document.getElementById("location").textContent =
+    "📍 Geolocalización no soportada";
+}

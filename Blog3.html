@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Radio Blog Online</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🎵 Radio Blog Online</h1>
+  <p>Música, noticias y buena vibra</p>
+</header>
+
+<div class="container">
+
+  <!-- BLOG -->
+  <div class="blog">
+    <div class="post">
+      <h2>Bienvenido a la radio</h2>
+      <p>Este es un blog donde compartimos música, noticias y cultura.</p>
+    </div>
+
+    <div class="post">
+      <h2>Artículo del día</h2>
+      <p>La radio online sigue viva y más fuerte que nunca.</p>
+    </div>
+  </div>
+
+  <!-- RADIO -->
+  <div class="radio">
+    <h2>📻 Radio en vivo</h2>
+
+    <audio id="radioPlayer"
+      src="https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one"
+      preload="none">
+    </audio>
+
+    <button onclick="toggleRadio()">▶️ Play / ⏸ Pause</button>
+
+    <div class="info">
+      <p id="time"></p>
+      <p id="location">📍 Ubicación: Detectando...</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Radio Blog Online
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
